@@ -3,9 +3,9 @@ package br.com.appdosbixo.repository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.appdosbixo.domain.Animal;
+import br.com.appdosbixo.domain.Doenca;
 
 @Repository
-public interface AnimalRepository extends MongoRepository<Animal, String >{
+public interface DoencaRepository extends MongoRepository<Doenca, String> {
 
 }

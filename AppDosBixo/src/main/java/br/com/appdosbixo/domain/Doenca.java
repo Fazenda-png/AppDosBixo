@@ -1,11 +1,12 @@
-package br.com.appdosbixo.DTO;
+package br.com.appdosbixo.domain;
 
 import java.io.Serializable;
 import java.util.Date;
 
-import br.com.appdosbixo.domain.Doenca;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-public class DoencaDTO implements Serializable {
+@Document(collection = "doenca")
+public class Doenca implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private String Id;
@@ -13,12 +14,16 @@ public class DoencaDTO implements Serializable {
 	private String remedioAplicado;
 	private Date dataInicio;
 
-	public DoencaDTO() {
+	public Doenca() {
 
 	}
 
-	public DoencaDTO(Doenca obj) {
-
+	public Doenca(String id, String simtomas, String remedioAplicado, Date dataInicio) {
+		super();
+		Id = id;
+		this.simtomas = simtomas;
+		this.remedioAplicado = remedioAplicado;
+		this.dataInicio = dataInicio;
 	}
 
 	public String getId() {

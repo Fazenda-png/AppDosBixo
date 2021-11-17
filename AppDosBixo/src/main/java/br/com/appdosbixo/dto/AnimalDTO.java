@@ -1,15 +1,11 @@
-package br.com.appdosbixo.domain;
+package br.com.appdosbixo.DTO;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
+import br.com.appdosbixo.domain.Animal;
 import br.com.appdosbixo.domain.enums.TipoAnimal;
 
-@Document(collection = "animal")
-public class Animal implements Serializable {
+public class AnimalDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private String Id;
@@ -20,28 +16,14 @@ public class Animal implements Serializable {
 	private String racaPai;
 	private String racaMae;
 	private String sexo;
+	private TipoAnimal tipoAnimal;
 
-	private TipoAnimal tipo_animal;
-
-	private List<Vacina> vacinas = new ArrayList<>();
-	private List<Doenca> doencas = new ArrayList<>();
-
-	public Animal() {
+	public AnimalDTO() {
 
 	}
 
-	public Animal(String id, Integer numero, Double pesoInicial, Integer numeroMae, String nomePai, String racaPai,
-			String racaMae, String sexo, TipoAnimal tipo_animal) {
-		super();
-		Id = id;
-		Numero = numero;
-		this.pesoInicial = pesoInicial;
-		this.numeroMae = numeroMae;
-		this.nomePai = nomePai;
-		this.racaPai = racaPai;
-		this.racaMae = racaMae;
-		this.sexo = sexo;
-		this.tipo_animal = tipo_animal;
+	public AnimalDTO(Animal obj) {
+
 	}
 
 	public String getId() {
@@ -108,20 +90,13 @@ public class Animal implements Serializable {
 		this.sexo = sexo;
 	}
 
-	public TipoAnimal getTipo_animal() {
-		return tipo_animal;
+	public TipoAnimal getTipoAnimal() {
+		return tipoAnimal;
 	}
 
-	public void setTipo_animal(TipoAnimal tipo_animal) {
-		this.tipo_animal = tipo_animal;
+	public void setTipoAnimal(TipoAnimal tipoAnimal) {
+		this.tipoAnimal = tipoAnimal;
 	}
 
-	public List<Vacina> getVacinas() {
-		return vacinas;
-	}
-
-	public List<Doenca> getDoencas() {
-		return doencas;
-	}
 
 }
